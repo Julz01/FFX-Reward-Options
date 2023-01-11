@@ -1,0 +1,57 @@
+pip install hashids
+
+pip install hashids==0.8.4
+
+# install hash ID or hashids library
+
+pip install -U pytest
+
+from hashids import Hashids
+
+#check install worked and then import hashids function from library also called hashids
+
+hash_id = Hashids(salt='your_secret_here', min_length=12)
+
+#assign length of characters for your encrypted number
+
+hash_id.encrypt(72)
+
+#interesting to note that the output ID stays the same if you run it again
+
+#so you'd have to make it random manually yourself if you want different outputs by the same number
+
+# get encrypted version of integer 72 in 12 characters as output
+
+pip install python-barcode
+
+# install barcode library
+
+import barcode
+
+barcode_formats = barcode.PROVIDED_BARCODES
+
+print(barcode_formats)
+
+# select and print the barcode formats to pick from
+
+import barcode
+
+from barcode.writer import ImageWriter
+
+# select and import the ImageWriter function
+
+number = hash_id.encrypt(72)
+
+# assign the encrypted 72 to a variable
+
+barcode_format = barcode.get_barcode_class('code128')
+
+# assign a barcode format to another variable
+
+my_barcode = barcode_format(number, writer=ImageWriter())
+
+“””create the barcode by assigning a variable with the encrypted 72 into the barcode format and select the ImageWriter to create the PNG”””
+
+my_barcode.save("generated_barcode")
+
+# generate the barcode you created
